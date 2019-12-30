@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+
+    <!--- Link to jQuery --->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--- Link to Bootstrap --->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--- Link to CSS stylesheet --->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+    <h1>Crystal Game</h1>
+    <h2>Number to reach: <span id="number">0</span></h2>
+
+    <img id="crystal-pic1" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    <img id="crystal-pic2" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    <img id="crystal-pic3" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    <img id="crystal-pic4" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+
+    <!-- JAVASCRIPT -->
+
+    <script type="text/javascript">
+
+    // Loads the game
+    $(document).ready(function() {
+
+    // Computer picks and displays a random number
+        var computerNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+        $("#number").html(computerNumber);
+        console.log(computerNumber);
+        var lockgame=false;
+
+    });
+    
+    
+    
+    </script>
+    
+</body>
+</html>
