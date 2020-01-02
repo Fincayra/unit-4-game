@@ -19,24 +19,145 @@
 
     <h1>Crystal Game</h1>
     <h2>Number to reach: <span id="number">0</span></h2>
+    <h2>Total score: <span id="scoreTotal">0</span></h2>
+    <p>Wins: <span id="wins">0</span></p>
+    <p>Losses: <span id="loss">0</span></p>
 
-    <img id="crystal-pic1" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
-    <img id="crystal-pic2" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
-    <img id="crystal-pic3" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
-    <img id="crystal-pic4" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    <img id="crystal1" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    <img id="crystal2" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    <img id="crystal3" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    <img id="crystal4" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
 
     <!-- JAVASCRIPT -->
 
     <script type="text/javascript">
 
     // Loads the game
-    $(document).ready(function() {
+    $(document).ready(function() { 
+
+    var crystalArray = [2, 5, 7, 10];
+
+    function crystalNumber1() {
+        var crystalArray = [];
+        for (var i = 0; i < 4; i ++) {
+            crystalArray.push(random100());
+        }
+        return crystalArray
+    }
+    
+    // var crystalNumber2 = Math.floor(Math.random() * (8 - 6) + 1);
+    //     console.log(crystalNumber2);
+    // var crystalNumber3 = Math.floor(Math.random() * (10 - 9) + 1);
+    //     console.log(crystalNumber3);
+    // var crystalNumber4 = Math.floor(Math.random() * (12 - 11) + 1);
+    //     console.log(crystalNumber4);
+
+    // var crystalNumber4 = randomNumber(minCrystalNumber, maxCrystalNumber);
+    //     function randomNumber(minCrystalNumber, maxCrystalNumber) {
+    //     return Math.floor(Math.random() * (minCrystalNumber - maxCrystalNumber) + 1);
+    //     }
 
     // Computer picks and displays a random number
         var computerNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
         $("#number").html(computerNumber);
         console.log(computerNumber);
         var lockgame=false;
+
+        // var crystalNumber = Math.floor(Math.random() => (5));
+        // $("#crystal1").html(crystalNumber);
+        // console.log(crystalNumber);
+        // var crystalNumber = Math.floor(Math.random() * (10));
+        // $("#crystal2").html(crystalNumber);
+        // console.log(crystalNumber);
+        // var crystalNumber = Math.floor(Math.random() * (8));
+        // $("#crystal3").html(crystalNumber);
+        // console.log(crystalNumber);
+        // var crystalNumber = Math.floor(Math.random() * (2));
+        // $("#crystal4").html(crystalNumber);
+        // console.log(crystalNumber);
+
+    // Each crystal is assigned a random value
+       //var crystal1 = Math.floor(Math.random() * 2, 4) + 1;
+       //var crystal2 = Math.floor(Math.random() * 5);
+       //var crystal3 = Math.floor(Math.random() * 10);
+       //var crystal4 = Math.floor(Math.random() * 10);
+
+    // The score is tracked
+        var wins = 0;
+        var loss = 0;
+
+        let scoreTotal = 0;
+        $("scoreTotal").text(scoreTotal);
+
+        function win() {
+        wins = wins + 1;
+            $("#wins").text(wins);
+        }
+        function lose() {
+        loss = loss + 1;
+            $("#loss").text(loss);
+        }
+
+    // On click functions for each crystal, win/lose alerts
+        $("#crystal1").click(() => {
+        scoreTotal = scoreTotal + crystalNumber1
+        $("#scoreTotal").text(scoreTotal);
+        if (scoreTotal == computerNumber) {
+            alert("You win!")
+            win();
+            reset();
+        } else if (scoreTotal > computerNumber) {
+            alert("You lose!")
+            lose();
+            reset();
+        }
+    });
+
+        $("#crystal2").click(() => {
+        scoreTotal = scoreTotal + crystalNumber2
+        $("#scoreTotal").text(scoreTotal);
+        if (scoreTotal == computerNumber) {
+            alert("You win!")
+            win();
+            reset();
+        } else if (scoreTotal > computerNumber) {
+            alert("You lose!")
+            lose();
+            reset();
+        }
+    });
+        $("#crystal3").click(() => {
+        scoreTotal = scoreTotal + crystalNumber3
+        $("#scoreTotal").text(scoreTotal);
+        if (scoreTotal == computerNumber) {
+            alert("You win!")
+            win();
+            reset();
+        } else if (scoreTotal > computerNumber) {
+            alert("You lose!")
+            lose();
+            reset();
+        }
+    });
+        $("#crystal4").click(() => {
+        scoreTotal = scoreTotal + crystalNumber4
+        $("#scoreTotal").text(scoreTotal);
+        if (scoreTotal == computerNumber) {
+            alert("You win!")
+            win();
+            reset();
+        } else if (scoreTotal > computerNumber) {
+            alert("You lose!")
+            lose();
+            reset();
+        }
+    });
+
+    // Resets the game
+        function reset () {
+            scoreTotal = 0;
+            $("#scoreTotal").text(scoreTotal);
+        }
 
     });
     
