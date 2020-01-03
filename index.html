@@ -33,54 +33,30 @@
     <script type="text/javascript">
 
     // Loads the game
-    $(document).ready(function() { 
-
+    $(document).ready(function() {
+        
     var crystalArray = [2, 5, 7, 10];
-
-    function crystalNumber1() {
-        var crystalArray = [];
-        for (var i = 0; i < 4; i ++) {
-            crystalArray.push(random100());
-        }
-        return crystalArray
-    }
     
-    // var crystalNumber2 = Math.floor(Math.random() * (8 - 6) + 1);
-    //     console.log(crystalNumber2);
-    // var crystalNumber3 = Math.floor(Math.random() * (10 - 9) + 1);
-    //     console.log(crystalNumber3);
-    // var crystalNumber4 = Math.floor(Math.random() * (12 - 11) + 1);
-    //     console.log(crystalNumber4);
-
-    // var crystalNumber4 = randomNumber(minCrystalNumber, maxCrystalNumber);
-    //     function randomNumber(minCrystalNumber, maxCrystalNumber) {
-    //     return Math.floor(Math.random() * (minCrystalNumber - maxCrystalNumber) + 1);
-    //     }
+    // Assigns each crystal a random number
+    // Been fiddling with the codes for hours and no matter what I do, I can't get Math.random to use any of the numbers in my array using crystalArray.length. Again, I'm sure the solution is very simple, I'm just not seeing it. I'll keep trying, but for now this somewhat allows the game to function the way it should.
+    for (var i = 0; i < crystalArray.length; i++);
+        var crystalNumber1 = Math.floor(Math.random() * (10) + 2);
+        console.log(crystalNumber1);
+    for (var i = 0; i < crystalArray.length; i++);
+        var crystalNumber2 = Math.floor(Math.random() * (10) + 2);
+        console.log(crystalNumber2);
+    for (var i = 0; i < crystalArray.length; i++);
+        var crystalNumber3 = Math.floor(Math.random() * (10) + 2);
+        console.log(crystalNumber3);
+    for (var i = 0; i < crystalArray.length; i++);
+        var crystalNumber4 = Math.floor(Math.random() * (10) + 2);
+        console.log(crystalNumber4);
 
     // Computer picks and displays a random number
         var computerNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
         $("#number").html(computerNumber);
         console.log(computerNumber);
         var lockgame=false;
-
-        // var crystalNumber = Math.floor(Math.random() => (5));
-        // $("#crystal1").html(crystalNumber);
-        // console.log(crystalNumber);
-        // var crystalNumber = Math.floor(Math.random() * (10));
-        // $("#crystal2").html(crystalNumber);
-        // console.log(crystalNumber);
-        // var crystalNumber = Math.floor(Math.random() * (8));
-        // $("#crystal3").html(crystalNumber);
-        // console.log(crystalNumber);
-        // var crystalNumber = Math.floor(Math.random() * (2));
-        // $("#crystal4").html(crystalNumber);
-        // console.log(crystalNumber);
-
-    // Each crystal is assigned a random value
-       //var crystal1 = Math.floor(Math.random() * 2, 4) + 1;
-       //var crystal2 = Math.floor(Math.random() * 5);
-       //var crystal3 = Math.floor(Math.random() * 10);
-       //var crystal4 = Math.floor(Math.random() * 10);
 
     // The score is tracked
         var wins = 0;
@@ -157,13 +133,12 @@
         function reset () {
             scoreTotal = 0;
             $("#scoreTotal").text(scoreTotal);
+            computerNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+            $("#number").text(computerNumber);
         }
-
-    });
+});
     
-    
-    
-    </script>
+</script>
     
 </body>
 </html>
