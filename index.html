@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,19 +15,31 @@
 
     <!--- Link to CSS stylesheet --->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Link to Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Muli&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <h1>Crystal Game</h1>
-    <h2>Number to reach: <span id="number">0</span></h2>
-    <h2>Total score: <span id="scoreTotal">0</span></h2>
+    <div class="jumbotron">
+    <h1>Crystal Collector</h1>
+    <h2>A Game of Numbers</h2>
+    <div class="crystalnumber">
+        <h3>Crystal Number: <span id="number">0</span></h3>
+    </div> 
+    <div class="totalscore">
+        <h3>Total score: <span id="scoreTotal">0</span></h3>
+    </div>
     <p>Wins: <span id="wins">0</span></p>
     <p>Losses: <span id="loss">0</span></p>
+    </div>
 
+    <div class="crystalbox">
     <img id="crystal1" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
     <img id="crystal2" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
     <img id="crystal3" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
     <img id="crystal4" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642" alt="Crystal">
+    </div>
 
     <!-- JAVASCRIPT -->
 
